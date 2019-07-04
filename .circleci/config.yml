@@ -1,17 +1,30 @@
 version: 2.0
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/openjdk:8-jdk
     steps:
       - checkout:              
       - run:
           name: The First Step
-          command: | 
+          command:  
             gradle test
-            gradle jar
       - store_test_results:
           path: build/test-results
+  package:
+    steps:
+      - run:
+          name: The Second Step
+          command:  
+            gradle jar
       - store_artifacts:
           path: build/libs
           destination: prefix
+ workflows:
+   version: 2
+   two_job_flow:
+     jobs:
+       - test
+       - package:
+           requires:
+             - test
