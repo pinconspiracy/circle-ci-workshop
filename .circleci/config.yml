@@ -10,4 +10,4 @@ jobs:
           command: 
             gradle test
       - store_test_results:
-            path: /home/bluewins/Documents/git/circle-ci-workshop/test-results
+          path: test-results
