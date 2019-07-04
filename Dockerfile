@@ -1,3 +1,3 @@
 FROM circleci/openjdk:8-jdk
-COPY /src
+COPY /src/* /usr/src/app/
 ENTRYPOINT ["ls"]
