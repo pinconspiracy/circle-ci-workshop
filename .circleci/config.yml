@@ -11,3 +11,6 @@ jobs:
             gradle test
       - store_test_results:
           path: build/test-results
+      - store_artifacts:
+          path: /code/test-results
+          destination: prefix
