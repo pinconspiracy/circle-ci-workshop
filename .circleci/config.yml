@@ -23,7 +23,7 @@ jobs:
       - store_artifacts:
           path: build/libs
           destination: prefix
-   dockerize:
+  dockerize:
      machine: true
      steps:
        - checkout
