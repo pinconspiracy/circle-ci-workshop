@@ -15,7 +15,7 @@ class GildedRose {
                     if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                         items[i].quality = items[i].quality - 1;
                         
-                        if (!items[i].name.equals("Conjured item")) {
+                        if (items[i].name.equals("Conjured item")) {
                             items[i].quality = items[i].quality - 2;
                         }
                     }
@@ -31,7 +31,7 @@ class GildedRose {
                             }
                         }
 
-                        if (items[i].sellIn < 6) {
+                        if (items[i].sellIn < 6) {    items[i].quality = items[i].quality - 1;
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1;
                             }
